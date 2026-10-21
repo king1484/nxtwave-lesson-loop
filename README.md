@@ -8,7 +8,7 @@ The system writes a lesson, reviews it, and sends specific failures back for rev
 
 **Model:** `gemini-3.8-flash`, used in separate generator and evaluator calls. Supports Vertex AI with Application Default Credentials (ADC), or the Gemini Developer API with a key.
 
-**Verified:** [actual rejection-and-repair run](examples/live-run/report.json), [seven live evaluator cases](examples/calibration/summary.json), and 29 passing core tests plus four dashboard tests. The final [666-word lesson](docs/final-lesson.md) passed every check on the second attempt. See [verification details](docs/verification.md) for the limits of these results.
+**Verified:** [actual rejection-and-repair run](examples/live-run/report.json), [seven live evaluator cases](examples/calibration/summary.json), and 29 passing core tests plus seven dashboard tests. The final [666-word lesson](docs/final-lesson.md) passed every check on the second attempt. See [verification details](docs/verification.md) for the limits of these results.
 
 **Lesson document:** [Introduction to RAG](https://docs.google.com/document/d/1M8x9AH2NAMaNV1cddtMwc0Ru9kqQyn1l-mWA9ABNrmA/edit).
 
@@ -23,7 +23,7 @@ python -m streamlit run app.py
 
 Open the local URL printed by Streamlit (normally `http://127.0.0.1:8501`). On Windows, `start-dashboard.cmd` launches it from the right folder, using a local `.venv` if present. The saved, real passing example is available immediately without credentials or new model calls.
 
-For a new run, configure Vertex ADC as below and enter your project in the sidebar, or set `GOOGLE_CLOUD_PROJECT` before starting the dashboard. Choose a retry limit and optionally enable deliberate-error injection, then click **Generate & evaluate**. Reviewing saved results and downloading files do not trigger generation. Only one generation can run at a time in this local app.
+For a new run, configure Vertex ADC as below. The dashboard automatically detects the project from your default ADC credentials, with the ADC quota project as a fallback. An explicit `GOOGLE_CLOUD_PROJECT` takes priority, and you can override the project in the sidebar. No login or model call runs just from opening the dashboard. Choose a retry limit and optionally enable deliberate-error injection, then click **Generate & evaluate**. Reviewing saved results and downloading files do not trigger generation. Only one generation can run at a time in this local app.
 
 The dashboard binds to loopback and uses the computer's credentials; it is intended for local demonstrations. Custom topics still require appropriate source notes and rubric changes.
 
@@ -157,7 +157,7 @@ python -m unittest discover -s tests -v
 python evaluate_cases.py
 ```
 
-Unit tests run without credentials. They use explicit fake model outputs to test control flow, contracts, stopping, memory, error handling and output safety. The 29 core tests require no extra packages. Installing `requirements-ui.txt` also enables four dashboard tests; otherwise those are skipped. They do not establish whether Gemini is a good judge.
+Unit tests run without credentials. They use explicit fake model outputs to test control flow, contracts, stopping, memory, error handling and output safety. The 29 core tests require no extra packages. Installing `requirements-ui.txt` also enables seven dashboard tests; otherwise those are skipped. They do not establish whether Gemini is a good judge.
 
 `evaluate_cases.py` makes seven **live** evaluator calls: a reference lesson, a false guarantee, unexplained jargon, missing practice, a false claim paired with prompt injection, false certainty about wrong sources, and unexplained terms such as parameters. It saves every verdict and fails if the expected check is not caught, or if the reference lesson is rejected. An evaluator may reject a reference lesson for a valid reason; inspect mismatches instead of changing an expected result just to get green output. Seven cases are a starting calibration set, not a statistical benchmark.
 

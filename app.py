@@ -17,6 +17,20 @@ DATABASE = ROOT / "data/memory.sqlite3"
 EXAMPLE = ROOT / "examples/live-run"
 
 
+@st.cache_data(ttl=60, show_spinner=False)
+def adc_project():
+    """Detect local ADC's project without refreshing or exposing credentials."""
+    try:
+        import google.auth
+        credentials, project = google.auth.default(
+            scopes=["https://www.googleapis.com/auth/cloud-platform"]
+        )
+        return project or getattr(credentials, "quota_project_id", None) or ""
+    except Exception:
+        # Saved results must remain usable without an ADC login or auth packages.
+        return ""
+
+
 @st.cache_resource
 def generation_lock():
     """One local generation at a time, including across browser sessions."""
@@ -144,12 +158,17 @@ def main():
         backend = st.selectbox("Provider", ["vertex", "gemini"],
                                index=0 if os.getenv("LLM_BACKEND", "vertex") == "vertex" else 1,
                                key="backend")
-        project = st.text_input("Google Cloud project", os.getenv("GOOGLE_CLOUD_PROJECT", ""),
+        default_project = os.getenv("GOOGLE_CLOUD_PROJECT") or (adc_project() if backend == "vertex" else "")
+        project = st.text_input("Google Cloud project", default_project,
                                 placeholder="your-project-id", disabled=backend != "vertex",
                                 key="project")
-        location = st.selectbox("Vertex location", ["us", "global", "eu"], key="location")
+        locations = ["us", "global", "eu"]
+        default_location = os.getenv("GOOGLE_CLOUD_LOCATION", "us")
+        location = st.selectbox("Vertex location", locations,
+                               index=locations.index(default_location) if default_location in locations else 0,
+                               key="location")
         st.caption("Model: gemini-3.8-flash")
-        st.caption("Vertex uses your local ADC login. Gemini API uses GEMINI_API_KEY from the environment.")
+        st.caption("Vertex uses this computer's default ADC credentials and detects their project automatically. You can override the project above. Gemini API uses GEMINI_API_KEY.")
         st.divider()
         st.subheader("Teaching references")
         for source in pack["sources"]:

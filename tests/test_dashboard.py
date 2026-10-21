@@ -2,10 +2,12 @@
 
 import importlib.util
 import json
+import os
 from pathlib import Path
 import tempfile
 import unittest
 from unittest.mock import patch
+from types import SimpleNamespace
 
 if importlib.util.find_spec("streamlit"):
     from streamlit.testing.v1 import AppTest
@@ -17,8 +19,48 @@ ROOT = Path(__file__).resolve().parents[1]
 
 @unittest.skipIf(AppTest is None, "Install requirements-ui.txt to run dashboard tests.")
 class DashboardTests(unittest.TestCase):
+    def setUp(self):
+        import streamlit as st
+        st.cache_data.clear()
+        environment = patch.dict(os.environ, {"LLM_BACKEND": "vertex",
+                                              "GOOGLE_CLOUD_PROJECT": "",
+                                              "GOOGLE_CLOUD_LOCATION": "us"})
+        environment.start()
+        self.addCleanup(environment.stop)
+        credentials = patch("google.auth.default", return_value=(SimpleNamespace(), None))
+        credentials.start()
+        self.addCleanup(credentials.stop)
+
     def app(self):
         return AppTest.from_file(str(ROOT / "app.py"), default_timeout=15)
+
+    def test_default_adc_project_is_prefilled_without_generation(self):
+        with patch.dict(os.environ, {"GOOGLE_CLOUD_PROJECT": "", "LLM_BACKEND": "vertex"}), \
+                patch("google.auth.default", return_value=(SimpleNamespace(), "adc-project")), \
+                patch("lesson_loop.model.Gemini") as model:
+            app = self.app().run()
+        self.assertEqual(list(app.exception), [])
+        self.assertEqual(app.text_input(key="project").value, "adc-project")
+        model.assert_not_called()
+
+    def test_adc_quota_project_is_used_when_resource_project_is_missing(self):
+        with patch.dict(os.environ, {"GOOGLE_CLOUD_PROJECT": "", "LLM_BACKEND": "vertex"}), \
+                patch("google.auth.default", return_value=(SimpleNamespace(quota_project_id="quota-project"), None)), \
+                patch("lesson_loop.model.Gemini") as model:
+            app = self.app().run()
+        self.assertEqual(list(app.exception), [])
+        self.assertEqual(app.text_input(key="project").value, "quota-project")
+        model.assert_not_called()
+
+    def test_missing_adc_still_allows_saved_result_viewing(self):
+        with patch.dict(os.environ, {"GOOGLE_CLOUD_PROJECT": "", "LLM_BACKEND": "vertex"}), \
+                patch("google.auth.default", side_effect=RuntimeError("No local ADC")), \
+                patch("lesson_loop.model.Gemini") as model:
+            app = self.app().run()
+        self.assertEqual(list(app.exception), [])
+        self.assertEqual(app.text_input(key="project").value, "")
+        self.assertEqual(app.metric[0].value, "Passed")
+        model.assert_not_called()
 
     def test_initial_view_uses_saved_evidence_without_a_model_call(self):
         with patch("lesson_loop.model.Gemini") as model:
