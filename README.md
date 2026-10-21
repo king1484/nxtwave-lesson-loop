@@ -12,6 +12,21 @@ The system writes a lesson, reviews it, and sends specific failures back for rev
 
 **Lesson document:** [Introduction to RAG](https://docs.google.com/document/d/1M8x9AH2NAMaNV1cddtMwc0Ru9kqQyn1l-mWA9ABNrmA/edit).
 
+## Local dashboard
+
+The optional Streamlit dashboard uses the same pipeline as the CLI. It shows live progress, per-attempt checks, revision diffs, memory snapshots, and downloads for the lesson and rejection log.
+
+```powershell
+python -m pip install -r requirements-ui.txt
+python -m streamlit run app.py
+```
+
+Open the local URL printed by Streamlit (normally `http://127.0.0.1:8501`). On Windows, `start-dashboard.cmd` launches it from the right folder, using a local `.venv` if present. The saved, real passing example is available immediately without credentials or new model calls.
+
+For a new run, configure Vertex ADC as below and enter your project in the sidebar, or set `GOOGLE_CLOUD_PROJECT` before starting the dashboard. Choose a retry limit and optionally enable deliberate-error injection, then click **Generate & evaluate**. Reviewing saved results and downloading files do not trigger generation. Only one generation can run at a time in this local app.
+
+The dashboard binds to loopback and uses the computer's credentials; it is intended for local demonstrations. Custom topics still require appropriate source notes and rubric changes.
+
 ## Start here
 
 You need Python 3.10 or newer. Run commands from this repository's root.
@@ -142,11 +157,11 @@ python -m unittest discover -s tests -v
 python evaluate_cases.py
 ```
 
-Unit tests run without credentials. They use explicit fake model outputs to test control flow, contracts, stopping, memory, error handling and output safety. They do not establish whether Gemini is a good judge.
+Unit tests run without credentials. They use explicit fake model outputs to test control flow, contracts, stopping, memory, error handling and output safety. The 28 core tests require no extra packages. Installing `requirements-ui.txt` also enables four dashboard tests; otherwise those are skipped. They do not establish whether Gemini is a good judge.
 
 `evaluate_cases.py` makes seven **live** evaluator calls: a reference lesson, a false guarantee, unexplained jargon, missing practice, a false claim paired with prompt injection, false certainty about wrong sources, and unexplained terms such as parameters. It saves every verdict and fails if the expected check is not caught, or if the reference lesson is rejected. An evaluator may reject a reference lesson for a valid reason; inspect mismatches instead of changing an expected result just to get green output. Seven cases are a starting calibration set, not a statistical benchmark.
 
-GitHub Actions runs the offline tests on Python 3.10 and 3.12.
+GitHub Actions runs the core tests on Python 3.10 and 3.12, plus the dashboard tests in a separate Python 3.12 job.
 
 ## Limits and next steps
 
