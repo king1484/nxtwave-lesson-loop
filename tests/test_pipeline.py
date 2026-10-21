@@ -106,6 +106,17 @@ class PipelineTests(unittest.TestCase):
         self.assertIn("Quota unavailable", (output / "rejection-log.md").read_text(encoding="utf-8"))
         self.assertFalse((output / "lesson.md").exists())
 
+    def test_interruption_is_recorded_and_propagated(self):
+        model = FakeModel([])
+        with patch.object(model, "complete", side_effect=KeyboardInterrupt), \
+                self.assertRaises(KeyboardInterrupt):
+            self.run_it(model)
+        report_path = next((self.path / "runs").glob("*/report.json"))
+        report = json.loads(report_path.read_text(encoding="utf-8"))
+        self.assertEqual(report["status"], "error")
+        self.assertIn("interrupted", report["error"])
+        self.assertFalse((report_path.parent / "lesson.md").exists())
+
     def test_injection_only_affects_first_draft(self):
         report, output = self.run_it(FakeModel([judgment("accuracy"), judgment()]), inject_error=True)
         self.assertTrue(report["attempts"][0]["injected_error"])

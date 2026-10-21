@@ -8,7 +8,7 @@ The system writes a lesson, reviews it, and sends specific failures back for rev
 
 **Model:** `gemini-3.8-flash`, used in separate generator and evaluator calls. Supports Vertex AI with Application Default Credentials (ADC), or the Gemini Developer API with a key.
 
-**Verified:** [actual rejection-and-repair run](examples/live-run/report.json), [seven live evaluator cases](examples/calibration/summary.json), and 28 passing offline tests. The final [666-word lesson](docs/final-lesson.md) passed every check on the second attempt. See [verification details](docs/verification.md) for the limits of these results.
+**Verified:** [actual rejection-and-repair run](examples/live-run/report.json), [seven live evaluator cases](examples/calibration/summary.json), and 29 passing core tests plus four dashboard tests. The final [666-word lesson](docs/final-lesson.md) passed every check on the second attempt. See [verification details](docs/verification.md) for the limits of these results.
 
 **Lesson document:** [Introduction to RAG](https://docs.google.com/document/d/1M8x9AH2NAMaNV1cddtMwc0Ru9kqQyn1l-mWA9ABNrmA/edit).
 
@@ -157,7 +157,7 @@ python -m unittest discover -s tests -v
 python evaluate_cases.py
 ```
 
-Unit tests run without credentials. They use explicit fake model outputs to test control flow, contracts, stopping, memory, error handling and output safety. The 28 core tests require no extra packages. Installing `requirements-ui.txt` also enables four dashboard tests; otherwise those are skipped. They do not establish whether Gemini is a good judge.
+Unit tests run without credentials. They use explicit fake model outputs to test control flow, contracts, stopping, memory, error handling and output safety. The 29 core tests require no extra packages. Installing `requirements-ui.txt` also enables four dashboard tests; otherwise those are skipped. They do not establish whether Gemini is a good judge.
 
 `evaluate_cases.py` makes seven **live** evaluator calls: a reference lesson, a false guarantee, unexplained jargon, missing practice, a false claim paired with prompt injection, false certainty about wrong sources, and unexplained terms such as parameters. It saves every verdict and fails if the expected check is not caught, or if the reference lesson is rejected. An evaluator may reject a reference lesson for a valid reason; inspect mismatches instead of changing an expected result just to get green output. Seven cases are a starting calibration set, not a statistical benchmark.
 

@@ -4,7 +4,7 @@ Verified on 21 October 2026 with Python 3.12 on Windows.
 
 ## Offline checks
 
-`python -m unittest discover -s tests -v` passes all 28 tests. Tests use explicit fake responses to verify control flow, retry bounds, failure handling, citation validation, evidence references and persistent memory. These are software tests, not a measure of model accuracy.
+`python -m unittest discover -s tests -v` passes all 29 core tests. Tests use explicit fake responses to verify control flow, retry bounds, failure handling, citation validation, evidence references, persistent memory and interrupted-run status. These are software tests, not a measure of model accuracy.
 
 With `requirements-ui.txt` installed, four additional Streamlit AppTest cases check the saved-example view without model calls, missing-project validation, pipeline invocation with the selected retry/demo settings, failed-run presentation, and authentication-error handling. Opening or reviewing the dashboard does not itself start generation.
 

@@ -196,6 +196,11 @@ def run(model, memory, topic, pack, output_root, max_retries=2,
         report["error"] = str(exc)
         on_event(f"NOT SHIPPED: {exc}")
     finally:
+        # Streamlit reruns and user interruptions must not leave a finished job
+        # labelled as running. Let cancellation propagate after saving its state.
+        if report["status"] == "running":
+            report["status"] = "error"
+            report["error"] = "Run interrupted before completion; no lesson released."
         report["seconds"] = round(time.monotonic() - started, 2)
         report["calls"] = model.calls
         report["memory_after"] = memory.snapshot(scope)
