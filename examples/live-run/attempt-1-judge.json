@@ -1,0 +1,118 @@
+{
+  "checks": [
+    {
+      "id": "accuracy",
+      "passed": false,
+      "reason": "Line 64 directly claims that RAG always gives correct answers even when its source notes are wrong, contradicting the sources and the rubric constraint.",
+      "evidence_lines": [
+        64
+      ],
+      "source_ids": [
+        "S1",
+        "S2"
+      ]
+    },
+    {
+      "id": "coverage",
+      "passed": true,
+      "reason": "The candidate defines RAG, explains why to use it, explains its three steps (finding pieces, adding them to the question, generating an answer), and distinguishes looking up notes from retraining.",
+      "evidence_lines": [
+        9,
+        10,
+        11,
+        12,
+        18,
+        22,
+        23,
+        24,
+        25
+      ],
+      "source_ids": [
+        "S1",
+        "S2"
+      ]
+    },
+    {
+      "id": "language",
+      "passed": true,
+      "reason": "The candidate uses clear, accessible English suited to an Indian school-leaver without technical background.",
+      "evidence_lines": [
+        3,
+        7,
+        18,
+        22,
+        23,
+        24,
+        25
+      ],
+      "source_ids": []
+    },
+    {
+      "id": "jargon",
+      "passed": true,
+      "reason": "Technical terms such as AI, language model, retrieval, augmented, and generation are clearly defined at first use. Unnecessary jargon terms are avoided.",
+      "evidence_lines": [
+        7,
+        9,
+        10,
+        11,
+        12
+      ],
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "id": "example",
+      "passed": true,
+      "reason": "Includes an explicitly fictional Indian college example with a question, exact notice note, retrieval step, supported answer, and what guessing without notes looks like.",
+      "evidence_lines": [
+        29,
+        31,
+        33,
+        35,
+        37
+      ],
+      "source_ids": []
+    },
+    {
+      "id": "limitations",
+      "passed": true,
+      "reason": "Explains that missing, wrong, or outdated notes cause mistakes and gives an explicit 'do not know' response when notes lack the answer.",
+      "evidence_lines": [
+        41,
+        43
+      ],
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "id": "flow",
+      "passed": false,
+      "reason": "Line 64 in the recap introduces a false claim that contradicts what was previously taught, and the recap appears after the practice section instead of before it.",
+      "evidence_lines": [
+        60,
+        62,
+        64
+      ],
+      "source_ids": []
+    },
+    {
+      "id": "practice",
+      "passed": true,
+      "reason": "Contains exactly 3 numbered questions and a separate answer key testing meaning, process application to a new question, and missing evidence, with correct supported answers.",
+      "evidence_lines": [
+        47,
+        49,
+        50,
+        51,
+        55,
+        56,
+        57,
+        58
+      ],
+      "source_ids": []
+    }
+  ]
+}

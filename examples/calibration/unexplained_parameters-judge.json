@@ -1,0 +1,116 @@
+{
+  "checks": [
+    {
+      "id": "accuracy",
+      "passed": true,
+      "reason": "All statements align with the sources without unsupported claims, overstatements, or false guarantees.",
+      "evidence_lines": [
+        21,
+        29,
+        43,
+        67
+      ],
+      "source_ids": [
+        "S1",
+        "S2"
+      ]
+    },
+    {
+      "id": "coverage",
+      "passed": true,
+      "reason": "The candidate explains RAG, why it is used, its three-step process, expands the acronym, and distinguishes retrieval from retraining.",
+      "evidence_lines": [
+        15,
+        17,
+        18,
+        19,
+        21,
+        29,
+        37,
+        38,
+        39,
+        43
+      ],
+      "source_ids": [
+        "S1",
+        "S2"
+      ]
+    },
+    {
+      "id": "language",
+      "passed": true,
+      "reason": "The text uses simple, accessible English suitable for a beginner with limited English.",
+      "evidence_lines": [
+        5,
+        7,
+        9,
+        23,
+        47
+      ],
+      "source_ids": []
+    },
+    {
+      "id": "jargon",
+      "passed": false,
+      "reason": "Line 13 uses the technical terms 'query' and 'learned parameters' at their first use without providing any explanation.",
+      "evidence_lines": [
+        13
+      ],
+      "source_ids": []
+    },
+    {
+      "id": "example",
+      "passed": true,
+      "reason": "Includes an explicitly fictional Indian college library example with question, exact short note, retrieved text, supported answer, and what guessing without the note looks like.",
+      "evidence_lines": [
+        47,
+        49,
+        51,
+        53,
+        55,
+        57
+      ],
+      "source_ids": []
+    },
+    {
+      "id": "limitations",
+      "passed": true,
+      "reason": "Explains that missing, wrong, or outdated notes cause errors, notes RAG can make mistakes, and provides an explicit 'I do not know' response.",
+      "evidence_lines": [
+        63,
+        65,
+        67
+      ],
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "id": "flow",
+      "passed": false,
+      "reason": "Line 13 introduces 'query' and 'learned parameters' prematurely before the concept or process is motivated and defined, breaking the requirement to define concepts before relying on them.",
+      "evidence_lines": [
+        11,
+        13,
+        15,
+        25
+      ],
+      "source_ids": []
+    },
+    {
+      "id": "practice",
+      "passed": true,
+      "reason": "Includes exactly 3 numbered questions and an answer key covering meaning, a new application scenario, and missing evidence, fully supported by the lesson.",
+      "evidence_lines": [
+        73,
+        74,
+        75,
+        77,
+        79,
+        80,
+        81
+      ],
+      "source_ids": []
+    }
+  ]
+}

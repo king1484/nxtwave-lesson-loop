@@ -1,0 +1,597 @@
+{
+  "run_id": "20261021T140721Z-eec8e0a7",
+  "topic": "Introduction to RAG (Retrieval-Augmented Generation)",
+  "model": "gemini-3.8-flash",
+  "rubric_version": "1.1",
+  "max_retries": 2,
+  "demo_injection": true,
+  "status": "passed",
+  "memory_scope": "introduction to rag (retrieval-augmented generation):f67a54e653cad1c3",
+  "memory_before": {
+    "failure_counts": {},
+    "active_guidance": []
+  },
+  "attempts": [
+    {
+      "number": 1,
+      "injected_error": true,
+      "changes": [
+        "Wrote a beginner-friendly lesson following all 8 required headings exactly.",
+        "Targeted class 12 Indian learner using simple vocabulary and an open-book exam analogy.",
+        "Defined AI, language model, retrieval, augmented, and generation at first use without forbidden jargon.",
+        "Distinguished retrieving notes at answer time from retraining/changing what the model learned.",
+        "Included a clearly labelled fictional college example with exact notice and 'I do not know' behaviour.",
+        "Kept word counts close to targets (total ~570 words) and sentence lengths under constraints.",
+        "Added 3 practice questions with a matching answer key and correct factual citations."
+      ],
+      "checks": [
+        {
+          "id": "length",
+          "passed": true,
+          "reason": "633 words; required 500–900.",
+          "evidence": "",
+          "source_ids": []
+        },
+        {
+          "id": "structure",
+          "passed": true,
+          "reason": "Required headings must appear once, in order.",
+          "evidence": "",
+          "source_ids": []
+        },
+        {
+          "id": "sentence_length",
+          "passed": true,
+          "reason": "Average 11.3 words, longest 31; limits 18 and 35.",
+          "evidence": "",
+          "source_ids": []
+        },
+        {
+          "id": "citations",
+          "passed": true,
+          "reason": "At least one inline source ID; all IDs must exist in the source pack.",
+          "evidence": "",
+          "source_ids": []
+        },
+        {
+          "id": "accuracy",
+          "passed": false,
+          "reason": "Line 64 directly claims that RAG always gives correct answers even when its source notes are wrong, contradicting the sources and the rubric constraint.",
+          "evidence_lines": [
+            64
+          ],
+          "source_ids": [
+            "S1",
+            "S2"
+          ],
+          "evidence": [
+            "RAG always gives correct answers, even when its source notes are wrong."
+          ]
+        },
+        {
+          "id": "coverage",
+          "passed": true,
+          "reason": "The candidate defines RAG, explains why to use it, explains its three steps (finding pieces, adding them to the question, generating an answer), and distinguishes looking up notes from retraining.",
+          "evidence_lines": [
+            9,
+            10,
+            11,
+            12,
+            18,
+            22,
+            23,
+            24,
+            25
+          ],
+          "source_ids": [
+            "S1",
+            "S2"
+          ],
+          "evidence": [
+            "RAG stands for Retrieval-Augmented Generation [S1]. ",
+            "- **Retrieval** means finding useful information.",
+            "- **Augmented** means helped by extra information.",
+            "- **Generation** means writing out an answer.",
+            "A regular language model answers only from what the model learned in past training [S2]. It might guess when it does not know something fresh or specific. Looking up notes at answer time helps the system use new or special facts without changing what the model learned during its past training [S1, S2]. This improves factual quality and cuts down made-up facts [S1, S2].",
+            "The full process takes three simple steps:",
+            "1. **You ask a question:** You type what you need to know.",
+            "2. **The system finds notes:** The computer searches stored documents, web pages, or local files for matching pieces [S1]. An internet search is not always required [S1].",
+            "3. **The system writes the answer:** The computer gives your question along with those found notes to the language model [S1]. The model uses those notes to write out a clear reply [S1, S2]."
+          ]
+        },
+        {
+          "id": "language",
+          "passed": true,
+          "reason": "The candidate uses clear, accessible English suited to an Indian school-leaver without technical background.",
+          "evidence_lines": [
+            3,
+            7,
+            18,
+            22,
+            23,
+            24,
+            25
+          ],
+          "source_ids": [],
+          "evidence": [
+            "Imagine an open-book exam in college. Instead of answering only from memory, you open your notebook, find the right page, and write the answer. RAG works like this open-book test for computers. It helps computer programs answer your questions by reading helpful notes first.",
+            "AI means artificial intelligence, which is software that does human tasks like reading or writing text [S1]. A language model is a type of AI software trained to write sentences [S1].",
+            "A regular language model answers only from what the model learned in past training [S2]. It might guess when it does not know something fresh or specific. Looking up notes at answer time helps the system use new or special facts without changing what the model learned during its past training [S1, S2]. This improves factual quality and cuts down made-up facts [S1, S2].",
+            "The full process takes three simple steps:",
+            "1. **You ask a question:** You type what you need to know.",
+            "2. **The system finds notes:** The computer searches stored documents, web pages, or local files for matching pieces [S1]. An internet search is not always required [S1].",
+            "3. **The system writes the answer:** The computer gives your question along with those found notes to the language model [S1]. The model uses those notes to write out a clear reply [S1, S2]."
+          ]
+        },
+        {
+          "id": "jargon",
+          "passed": true,
+          "reason": "Technical terms such as AI, language model, retrieval, augmented, and generation are clearly defined at first use. Unnecessary jargon terms are avoided.",
+          "evidence_lines": [
+            7,
+            9,
+            10,
+            11,
+            12
+          ],
+          "source_ids": [
+            "S1"
+          ],
+          "evidence": [
+            "AI means artificial intelligence, which is software that does human tasks like reading or writing text [S1]. A language model is a type of AI software trained to write sentences [S1].",
+            "RAG stands for Retrieval-Augmented Generation [S1]. ",
+            "- **Retrieval** means finding useful information.",
+            "- **Augmented** means helped by extra information.",
+            "- **Generation** means writing out an answer."
+          ]
+        },
+        {
+          "id": "example",
+          "passed": true,
+          "reason": "Includes an explicitly fictional Indian college example with a question, exact notice note, retrieval step, supported answer, and what guessing without notes looks like.",
+          "evidence_lines": [
+            29,
+            31,
+            33,
+            35,
+            37
+          ],
+          "source_ids": [],
+          "evidence": [
+            "Let us look at a fictional college example.",
+            "Suppose you ask: \"What is the last date to submit the physics assignment?\"",
+            "Without notes, the AI might guess: \"It is probably Friday.\" That guess could be wrong.",
+            "Now, here is a fictional college notice: *\"Fictional Notice: Physics Assignment 2 must be submitted to Room 104 by 14th August at 4 PM.\"*",
+            "The RAG system finds this exact notice. It sends your question and this notice together to the language model. The model reads the notice and replies correctly: \"The last date to submit the physics assignment is 14th August by 4 PM.\""
+          ]
+        },
+        {
+          "id": "limitations",
+          "passed": true,
+          "reason": "Explains that missing, wrong, or outdated notes cause mistakes and gives an explicit 'do not know' response when notes lack the answer.",
+          "evidence_lines": [
+            41,
+            43
+          ],
+          "source_ids": [
+            "S1"
+          ],
+          "evidence": [
+            "RAG does not guarantee correct answers every time [S1, S2]. Mistakes can happen if the notes are wrong, old, or missing [S1]. If the notice has the wrong date, the answer can also be wrong [S1]. ",
+            "Also, if you ask: \"What is the chemistry homework?\", the physics notice does not help. In that case, a good RAG system should simply say: \"The provided notes do not contain this answer,\" instead of guessing [S1]."
+          ]
+        },
+        {
+          "id": "flow",
+          "passed": false,
+          "reason": "Line 64 in the recap introduces a false claim that contradicts what was previously taught, and the recap appears after the practice section instead of before it.",
+          "evidence_lines": [
+            60,
+            62,
+            64
+          ],
+          "source_ids": [],
+          "evidence": [
+            "## Recap",
+            "RAG combines finding saved notes with text generation [S1, S2]. It helps an AI answer using real documents rather than guessing [S1]. Always remember: if source notes are missing or incorrect, errors can still happen [S1].",
+            "RAG always gives correct answers, even when its source notes are wrong."
+          ]
+        },
+        {
+          "id": "practice",
+          "passed": true,
+          "reason": "Contains exactly 3 numbered questions and a separate answer key testing meaning, process application to a new question, and missing evidence, with correct supported answers.",
+          "evidence_lines": [
+            47,
+            49,
+            50,
+            51,
+            55,
+            56,
+            57,
+            58
+          ],
+          "source_ids": [],
+          "evidence": [
+            "Try these three questions:",
+            "1. What does the word \"augmented\" mean in RAG?",
+            "2. Fictional library notice: *\"The library closes at 6 PM on Saturdays.\"* A student asks: \"When does the library close on Saturday?\" What will a RAG system do to answer?",
+            "3. Fictional bus notice: *\"Bus 12 runs between the railway station and the market.\"* A passenger asks: \"What is the ticket price for Bus 12?\" What should a good RAG system reply?",
+            "**Answers:**",
+            "1. \"Augmented\" means helped by extra information.",
+            "2. The system retrieves the library notice, attaches it to the student's question, and uses it to answer: \"The library closes at 6 PM on Saturdays.\"",
+            "3. It should state that the provided notes do not contain the answer, because ticket prices are not mentioned."
+          ]
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "injected_error": false,
+      "changes": [
+        "Removed the false claim at the end of the previous lesson that stated RAG always gives correct answers even when notes are wrong.",
+        "Ensured all 8 required headings match the exact required heading list, keeping 'Recap' as the eighth section as specified in the rubric.",
+        "Clarified in 'Why it matters' and 'Recap' that looking up notes at answer time does not change what the model learned during training.",
+        "Maintained short sentence lengths and everyday language accessible for a class 12 graduate with limited English."
+      ],
+      "checks": [
+        {
+          "id": "length",
+          "passed": true,
+          "reason": "666 words; required 500–900.",
+          "evidence": "",
+          "source_ids": []
+        },
+        {
+          "id": "structure",
+          "passed": true,
+          "reason": "Required headings must appear once, in order.",
+          "evidence": "",
+          "source_ids": []
+        },
+        {
+          "id": "sentence_length",
+          "passed": true,
+          "reason": "Average 11.5 words, longest 31; limits 18 and 35.",
+          "evidence": "",
+          "source_ids": []
+        },
+        {
+          "id": "citations",
+          "passed": true,
+          "reason": "At least one inline source ID; all IDs must exist in the source pack.",
+          "evidence": "",
+          "source_ids": []
+        },
+        {
+          "id": "accuracy",
+          "passed": true,
+          "reason": "All claims agree with the sources without unsupported certainty, unwarranted assumptions, or false claims about retraining or understanding.",
+          "evidence_lines": [
+            7,
+            9,
+            14,
+            18,
+            24,
+            25,
+            41,
+            43,
+            62
+          ],
+          "source_ids": [
+            "S1",
+            "S2"
+          ],
+          "evidence": [
+            "AI means artificial intelligence, which is software that does tasks like reading or writing text [S1]. A language model is a type of AI software trained to produce written language [S1].",
+            "RAG stands for Retrieval-Augmented Generation [S1].",
+            "RAG combines finding relevant information in external sources with a language model that writes a response [S1, S2].",
+            "A regular language model answers using only what the model learned in past training [S2]. It might guess when it does not know fresh or specialized details. Looking up notes at answer time provides new information without changing what the model learned in its training [S1, S2]. Supplying reference information at answer time and training a model are different operations [S2]. This process can improve factual quality and reduce made-up answers [S1, S2].",
+            "2. **The system finds notes:** The computer searches stored documents, web pages, or local files for matching pieces [S1]. An internet search is not always required [S1].",
+            "3. **The system writes the answer:** The computer provides the found notes alongside your question to the language model [S1]. The model uses those notes to generate a response [S1, S2].",
+            "RAG does not guarantee correct answers [S1, S2]. Mistakes can still happen if the source notes are wrong, outdated, or missing [S1]. If the notice has an incorrect date, the model's answer can also be wrong [S1]. Therefore, notes should be checked rather than blindly trusted [S1].",
+            "Furthermore, if you ask: \"What is the chemistry homework?\", the physics notice has no helpful details. In that situation, a good RAG system should simply say: \"The provided notes do not contain this answer,\" instead of guessing [S1].",
+            "RAG combines looking up saved notes with text generation [S1, S2]. It helps an AI answer using reference documents rather than guessing [S1]. Looking up notes does not change what the model learned in training [S2]. Remember that mistakes can still happen if notes are missing or incorrect [S1]."
+          ]
+        },
+        {
+          "id": "coverage",
+          "passed": true,
+          "reason": "The lesson covers the definition and expansion of RAG, why it is used, its full step-by-step process, and explicitly distinguishes looking up information from retraining.",
+          "evidence_lines": [
+            7,
+            9,
+            10,
+            11,
+            12,
+            14,
+            18,
+            22,
+            23,
+            24,
+            25
+          ],
+          "source_ids": [
+            "S1",
+            "S2"
+          ],
+          "evidence": [
+            "AI means artificial intelligence, which is software that does tasks like reading or writing text [S1]. A language model is a type of AI software trained to produce written language [S1].",
+            "RAG stands for Retrieval-Augmented Generation [S1].",
+            "- **Retrieval** means finding useful information.",
+            "- **Augmented** means helped by extra information.",
+            "- **Generation** means writing out an answer.",
+            "RAG combines finding relevant information in external sources with a language model that writes a response [S1, S2].",
+            "A regular language model answers using only what the model learned in past training [S2]. It might guess when it does not know fresh or specialized details. Looking up notes at answer time provides new information without changing what the model learned in its training [S1, S2]. Supplying reference information at answer time and training a model are different operations [S2]. This process can improve factual quality and reduce made-up answers [S1, S2].",
+            "The full process takes three clear steps:",
+            "1. **A question is asked:** You ask a question about a topic.",
+            "2. **The system finds notes:** The computer searches stored documents, web pages, or local files for matching pieces [S1]. An internet search is not always required [S1].",
+            "3. **The system writes the answer:** The computer provides the found notes alongside your question to the language model [S1]. The model uses those notes to generate a response [S1, S2]."
+          ]
+        },
+        {
+          "id": "language",
+          "passed": true,
+          "reason": "The text uses simple, respectful everyday English well-suited for a Class 12 learner with limited English and no technical background.",
+          "evidence_lines": [
+            3,
+            7,
+            10,
+            11,
+            12,
+            18,
+            23,
+            24,
+            25,
+            33,
+            41
+          ],
+          "source_ids": [],
+          "evidence": [
+            "Imagine an open-book exam in college. Instead of answering only from memory, you open your notebook, find the right page, and write your answer. RAG works like this open-book test for computers. It helps computer software answer your questions by reading helpful notes first.",
+            "AI means artificial intelligence, which is software that does tasks like reading or writing text [S1]. A language model is a type of AI software trained to produce written language [S1].",
+            "- **Retrieval** means finding useful information.",
+            "- **Augmented** means helped by extra information.",
+            "- **Generation** means writing out an answer.",
+            "A regular language model answers using only what the model learned in past training [S2]. It might guess when it does not know fresh or specialized details. Looking up notes at answer time provides new information without changing what the model learned in its training [S1, S2]. Supplying reference information at answer time and training a model are different operations [S2]. This process can improve factual quality and reduce made-up answers [S1, S2].",
+            "1. **A question is asked:** You ask a question about a topic.",
+            "2. **The system finds notes:** The computer searches stored documents, web pages, or local files for matching pieces [S1]. An internet search is not always required [S1].",
+            "3. **The system writes the answer:** The computer provides the found notes alongside your question to the language model [S1]. The model uses those notes to generate a response [S1, S2].",
+            "Without any notes, the language model might guess blindly: \"It is probably this Friday.\" That guess could be completely wrong.",
+            "RAG does not guarantee correct answers [S1, S2]. Mistakes can still happen if the source notes are wrong, outdated, or missing [S1]. If the notice has an incorrect date, the model's answer can also be wrong [S1]. Therefore, notes should be checked rather than blindly trusted [S1]."
+          ]
+        },
+        {
+          "id": "jargon",
+          "passed": true,
+          "reason": "Technical terms (AI, language model, retrieval, augmented, generation) are clearly defined immediately upon their first use, and unnecessary jargon like parameters, query, and vector database is omitted.",
+          "evidence_lines": [
+            7,
+            9,
+            10,
+            11,
+            12
+          ],
+          "source_ids": [],
+          "evidence": [
+            "AI means artificial intelligence, which is software that does tasks like reading or writing text [S1]. A language model is a type of AI software trained to produce written language [S1].",
+            "RAG stands for Retrieval-Augmented Generation [S1].",
+            "- **Retrieval** means finding useful information.",
+            "- **Augmented** means helped by extra information.",
+            "- **Generation** means writing out an answer."
+          ]
+        },
+        {
+          "id": "example",
+          "passed": true,
+          "reason": "An explicitly fictional Indian college assignment example provides a question, exact short notice, retrieved text, supported answer, and shows what goes wrong when guessing without notes.",
+          "evidence_lines": [
+            29,
+            31,
+            33,
+            35,
+            37
+          ],
+          "source_ids": [],
+          "evidence": [
+            "Let us look at a fictional college situation.",
+            "Suppose you ask: \"What is the last date to submit the physics assignment?\"",
+            "Without any notes, the language model might guess blindly: \"It is probably this Friday.\" That guess could be completely wrong.",
+            "Now consider this fictional notice: *\"Fictional Notice: Physics Assignment 2 must be submitted to Room 104 by 14th August at 4 PM.\"*",
+            "The RAG system finds this exact notice piece. It sends your question together with this notice to the language model. The model reads the text and writes a supported reply: \"The last date to submit the physics assignment is 14th August by 4 PM.\""
+          ]
+        },
+        {
+          "id": "limitations",
+          "passed": true,
+          "reason": "The lesson explains that missing, wrong, or outdated material leads to mistakes, stresses that RAG does not guarantee truth, and provides an explicit 'I do not know' response for missing evidence.",
+          "evidence_lines": [
+            41,
+            43
+          ],
+          "source_ids": [
+            "S1"
+          ],
+          "evidence": [
+            "RAG does not guarantee correct answers [S1, S2]. Mistakes can still happen if the source notes are wrong, outdated, or missing [S1]. If the notice has an incorrect date, the model's answer can also be wrong [S1]. Therefore, notes should be checked rather than blindly trusted [S1].",
+            "Furthermore, if you ask: \"What is the chemistry homework?\", the physics notice has no helpful details. In that situation, a good RAG system should simply say: \"The provided notes do not contain this answer,\" instead of guessing [S1]."
+          ]
+        },
+        {
+          "id": "flow",
+          "passed": true,
+          "reason": "The motivation is introduced first, concepts are defined before being used in the process, steps logically connect, and the recap matches the content without introducing new concepts.",
+          "evidence_lines": [
+            3,
+            7,
+            9,
+            14,
+            18,
+            22,
+            23,
+            24,
+            25,
+            60,
+            62
+          ],
+          "source_ids": [],
+          "evidence": [
+            "Imagine an open-book exam in college. Instead of answering only from memory, you open your notebook, find the right page, and write your answer. RAG works like this open-book test for computers. It helps computer software answer your questions by reading helpful notes first.",
+            "AI means artificial intelligence, which is software that does tasks like reading or writing text [S1]. A language model is a type of AI software trained to produce written language [S1].",
+            "RAG stands for Retrieval-Augmented Generation [S1].",
+            "RAG combines finding relevant information in external sources with a language model that writes a response [S1, S2].",
+            "A regular language model answers using only what the model learned in past training [S2]. It might guess when it does not know fresh or specialized details. Looking up notes at answer time provides new information without changing what the model learned in its training [S1, S2]. Supplying reference information at answer time and training a model are different operations [S2]. This process can improve factual quality and reduce made-up answers [S1, S2].",
+            "The full process takes three clear steps:",
+            "1. **A question is asked:** You ask a question about a topic.",
+            "2. **The system finds notes:** The computer searches stored documents, web pages, or local files for matching pieces [S1]. An internet search is not always required [S1].",
+            "3. **The system writes the answer:** The computer provides the found notes alongside your question to the language model [S1]. The model uses those notes to generate a response [S1, S2].",
+            "## Recap",
+            "RAG combines looking up saved notes with text generation [S1, S2]. It helps an AI answer using reference documents rather than guessing [S1]. Looking up notes does not change what the model learned in training [S2]. Remember that mistakes can still happen if notes are missing or incorrect [S1]."
+          ]
+        },
+        {
+          "id": "practice",
+          "passed": true,
+          "reason": "Contains exactly 3 numbered learner questions testing meaning, applying the process to a new scenario, and handling missing evidence, followed by a separate accurate answer key.",
+          "evidence_lines": [
+            47,
+            49,
+            50,
+            51,
+            55,
+            56,
+            57,
+            58
+          ],
+          "source_ids": [],
+          "evidence": [
+            "Try these three questions:",
+            "1. What does the word \"augmented\" mean in RAG?",
+            "2. Fictional library notice: *\"The college library closes at 6 PM on Saturdays.\"* A student asks: \"When does the library close on Saturday?\" What will a RAG system do to answer?",
+            "3. Fictional bus notice: *\"Bus 12 runs between the railway station and the market.\"* A passenger asks: \"What is the ticket price for Bus 12?\" What should a good RAG system reply?",
+            "**Answers:**",
+            "1. \"Augmented\" means helped by extra information.",
+            "2. The system finds the relevant library notice, gives that notice together with the question to the language model, and generates the answer: \"The college library closes at 6 PM on Saturdays.\"",
+            "3. It should reply that the provided notes do not contain the answer, because ticket prices are not mentioned in the notice."
+          ]
+        }
+      ],
+      "diff": "attempt-2-changes.diff"
+    }
+  ],
+  "seconds": 39.09,
+  "calls": [
+    {
+      "role": "generator",
+      "model": "gemini-3.8-flash",
+      "backend": "vertex",
+      "location": "us",
+      "model_version": "gemini-3.8-flash",
+      "seconds": 11.72,
+      "usage": {
+        "promptTokenCount": 1455,
+        "candidatesTokenCount": 1122,
+        "totalTokenCount": 2577,
+        "trafficType": "ON_DEMAND",
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 1455
+          }
+        ],
+        "candidatesTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 1122
+          }
+        ]
+      },
+      "http_attempts": 1
+    },
+    {
+      "role": "evaluator",
+      "model": "gemini-3.8-flash",
+      "backend": "vertex",
+      "location": "us",
+      "model_version": "gemini-3.8-flash",
+      "seconds": 7.81,
+      "usage": {
+        "promptTokenCount": 3053,
+        "candidatesTokenCount": 758,
+        "totalTokenCount": 3811,
+        "trafficType": "ON_DEMAND",
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 3053
+          }
+        ],
+        "candidatesTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 758
+          }
+        ]
+      },
+      "http_attempts": 1
+    },
+    {
+      "role": "generator",
+      "model": "gemini-3.8-flash",
+      "backend": "vertex",
+      "location": "us",
+      "model_version": "gemini-3.8-flash",
+      "seconds": 10.8,
+      "usage": {
+        "promptTokenCount": 2662,
+        "candidatesTokenCount": 1144,
+        "totalTokenCount": 3806,
+        "trafficType": "ON_DEMAND",
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 2662
+          }
+        ],
+        "candidatesTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 1144
+          }
+        ]
+      },
+      "http_attempts": 1
+    },
+    {
+      "role": "evaluator",
+      "model": "gemini-3.8-flash",
+      "backend": "vertex",
+      "location": "us",
+      "model_version": "gemini-3.8-flash",
+      "seconds": 7.88,
+      "usage": {
+        "promptTokenCount": 3064,
+        "candidatesTokenCount": 855,
+        "totalTokenCount": 3919,
+        "trafficType": "ON_DEMAND",
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 3064
+          }
+        ],
+        "candidatesTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 855
+          }
+        ]
+      },
+      "http_attempts": 1
+    }
+  ],
+  "memory_after": {
+    "failure_counts": {},
+    "active_guidance": []
+  }
+}

@@ -1,0 +1,123 @@
+{
+  "checks": [
+    {
+      "id": "accuracy",
+      "passed": true,
+      "reason": "All claims align with the sources without absolute certainty claims, avoiding false claims about internet search, retraining, or computer understanding.",
+      "evidence_lines": [
+        19,
+        21,
+        27,
+        41,
+        65
+      ],
+      "source_ids": [
+        "S1",
+        "S2"
+      ]
+    },
+    {
+      "id": "coverage",
+      "passed": true,
+      "reason": "The lesson expands RAG, explains motivation and the complete process (finding pieces, adding them to the question, generating an answer), and explicitly distinguishes looking up info from retraining.",
+      "evidence_lines": [
+        13,
+        15,
+        16,
+        17,
+        25,
+        27,
+        35,
+        36,
+        37,
+        41
+      ],
+      "source_ids": [
+        "S1",
+        "S2"
+      ]
+    },
+    {
+      "id": "language",
+      "passed": true,
+      "reason": "Language uses simple everyday words and clear, respectful sentences suited for a Class 12 Indian learner with limited English.",
+      "evidence_lines": [
+        5,
+        7,
+        9,
+        13,
+        21,
+        45
+      ],
+      "source_ids": []
+    },
+    {
+      "id": "jargon",
+      "passed": true,
+      "reason": "Technical terms (AI, language model, retrieval, augmented, database, context, retraining) are clearly explained at their first use, and unnecessary jargon is omitted.",
+      "evidence_lines": [
+        7,
+        15,
+        16,
+        17,
+        19,
+        27,
+        39,
+        41
+      ],
+      "source_ids": []
+    },
+    {
+      "id": "example",
+      "passed": true,
+      "reason": "Includes a clearly labeled fictional Indian college example showing the question, exact short note, what is retrieved, supported answer, and what goes wrong when guessing without the note.",
+      "evidence_lines": [
+        45,
+        47,
+        49,
+        51,
+        53,
+        55
+      ],
+      "source_ids": []
+    },
+    {
+      "id": "limitations",
+      "passed": true,
+      "reason": "Covers that missing, wrong, or outdated notes can cause errors, RAG can still make mistakes, and provides an explicit 'I do not know' response for missing evidence.",
+      "evidence_lines": [
+        61,
+        63,
+        65
+      ],
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "id": "flow",
+      "passed": true,
+      "reason": "Motivation precedes the detailed process, terms are defined before use, steps transition smoothly, and the recap matches taught content without adding new ideas.",
+      "evidence_lines": [
+        5,
+        7,
+        13,
+        25,
+        33,
+        35,
+        36,
+        37,
+        68,
+        69
+      ],
+      "source_ids": []
+    },
+    {
+      "id": "practice",
+      "passed": false,
+      "reason": "The candidate completely lacks practice questions and an answer key.",
+      "evidence_lines": [],
+      "source_ids": []
+    }
+  ]
+}

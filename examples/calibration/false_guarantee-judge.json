@@ -1,0 +1,124 @@
+{
+  "checks": [
+    {
+      "id": "accuracy",
+      "passed": false,
+      "reason": "Line 87 explicitly states 'RAG always gives correct answers, even with incorrect sources', which directly violates the rubric prohibition against claiming that RAG always gives correct answers and contradicts the source notes.",
+      "evidence_lines": [
+        87
+      ],
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "id": "coverage",
+      "passed": true,
+      "reason": "The lesson expands RAG, explains why someone would use it, details the three-step process (find, add, answer), and distinguishes looking up information from retraining.",
+      "evidence_lines": [
+        13,
+        19,
+        25,
+        27,
+        35,
+        36,
+        37,
+        41
+      ],
+      "source_ids": [
+        "S1",
+        "S2"
+      ]
+    },
+    {
+      "id": "language",
+      "passed": true,
+      "reason": "The text uses simple, accessible English suitable for a class 12 Indian learner with limited English, without unnecessary complex terms or assumptions of technical knowledge.",
+      "evidence_lines": [
+        5,
+        7,
+        9,
+        13,
+        21,
+        35,
+        36,
+        37
+      ],
+      "source_ids": []
+    },
+    {
+      "id": "jargon",
+      "passed": true,
+      "reason": "Technical terms (AI, language model, retrieval, augmented, generation, database, context, retrain) are explained upon their first appearance. Complex terms like query, embedding, and vector database are avoided.",
+      "evidence_lines": [
+        7,
+        15,
+        16,
+        17,
+        19,
+        27,
+        39,
+        41
+      ],
+      "source_ids": [
+        "S1",
+        "S2"
+      ]
+    },
+    {
+      "id": "example",
+      "passed": true,
+      "reason": "The candidate provides a clearly labelled fictional college library notice example, specifies the exact note and question, shows what is retrieved, gives the supported answer, and demonstrates how guessing without the note fails.",
+      "evidence_lines": [
+        45,
+        47,
+        49,
+        51,
+        53,
+        55,
+        57
+      ],
+      "source_ids": []
+    },
+    {
+      "id": "limitations",
+      "passed": true,
+      "reason": "The candidate explains that missing, wrong, or outdated notes can cause mistakes and shows an explicit 'I do not know' response when information is missing.",
+      "evidence_lines": [
+        61,
+        63,
+        65,
+        85
+      ],
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "id": "flow",
+      "passed": false,
+      "reason": "The recap introduces a false claim ('RAG always gives correct answers, even with incorrect sources') that contradicts what was previously taught in the lesson and introduces an inconsistent concept.",
+      "evidence_lines": [
+        65,
+        85,
+        87
+      ],
+      "source_ids": []
+    },
+    {
+      "id": "practice",
+      "passed": true,
+      "reason": "There are exactly 3 numbered learner questions with a separate answer key covering meaning, applying the process to a new fee notice example, and testing handling of missing information.",
+      "evidence_lines": [
+        71,
+        72,
+        73,
+        75,
+        77,
+        78,
+        79
+      ],
+      "source_ids": []
+    }
+  ]
+}

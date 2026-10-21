@@ -1,0 +1,72 @@
+{
+  "topic": "Introduction to RAG (Retrieval-Augmented Generation)",
+  "sources": [
+    {
+      "id": "S1",
+      "title": "Google Cloud: What is Retrieval-Augmented Generation?",
+      "url": "https://cloud.google.com/use-cases/retrieval-augmented-generation",
+      "notes": "RAG means Retrieval-Augmented Generation. It combines finding relevant information in external sources with a language model that writes a response. A language model is AI software trained to produce language; AI means artificial intelligence, software doing tasks such as understanding or producing text. The application finds useful material, provides it alongside the question, and asks the model to answer using that material. Sources can include documents, databases, or web pages; internet search is not required. This can help with fresh or specialised information when the selected sources contain it. It can reduce made-up answers, but accuracy depends on relevant, reliable evidence and the model using it correctly. Wrong, missing or outdated evidence can still lead to wrong answers. Source notes should be checked rather than blindly trusted. For a beginner example, it is sensible to say that the supplied notes do not contain an answer instead of guessing. RAG does not guarantee correct answers."
+    },
+    {
+      "id": "S2",
+      "title": "Lewis et al.: Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks",
+      "url": "https://arxiv.org/abs/2005.11401",
+      "notes": "The 2020 paper combines a pre-trained language generator with an external retrieval component, using a searchable Wikipedia passage collection in its experiments. It reports improved factuality compared with a generator without that retrieval component; this is not a guarantee of truth. At answer time, retrieval supplies relevant passages to support generation. Looking up new passages does not itself change the language model's learned parameters. Training a model and supplying reference information at answer time are different operations. The original research also studied training its system; do not claim that no RAG system can ever involve training. A useful beginner analogy is reading notes before answering, but the computer still searches and generates text rather than literally understanding like a person."
+    }
+  ],
+  "rubric": {
+    "accuracy": "Every technical claim agrees with the source notes. Do not turn a possibility into certainty: neither 'RAG always gives correct answers' nor 'wrong source notes always make the answer wrong' is supported. No claim that RAG always searches the internet or necessarily retrains the model. Avoid unsupported claims about a computer's understanding. Clearly labelled fictional examples and everyday analogies are allowed and need no research citation.",
+    "coverage": "Explain what the topic is, why someone would use it, and its complete basic process. For RAG: expand RAG; explain finding relevant document pieces, adding those pieces to the question, then generating an answer. Distinguish looking up information from retraining.",
+    "language": "Use everyday English for a learner who has finished class 12 in India and has limited English. No advanced vocabulary where a familiar word works; simple, respectful sentences without assuming coding knowledge.",
+    "jargon": "Explain each technical term at its FIRST use, including AI, language model/LLM, retrieval, context, embedding, parameters, query, database and vector database IF used. In particular, 'learned parameters' without an explanation FAILS, as does 'query' without explaining it means a question. The full RAG expansion can be followed immediately by plain-language definitions, including augmented. Omit unnecessary jargon.",
+    "example": "Include one explicitly fictional, familiar Indian learning example: a question, exact short source note, what is retrieved, and an answer supported by that note. Also show how guessing without the note can go wrong. No unexplained jump between steps.",
+    "limitations": "Explain that missing, wrong or outdated source material can lead to wrong answers; RAG can still make mistakes. Show an explicit 'I do not know' or equivalent response when the supplied notes do not contain the answer.",
+    "flow": "Motivation comes before the detailed process. Define concepts before relying on them; each step connects to the next. The recap matches what was taught, without introducing new concepts.",
+    "practice": "Include exactly 3 numbered learner questions plus a separate answer key. One tests meaning, one applies the process to a NEW question, and one tests missing evidence. Answers must be correct and supported by the lesson."
+  },
+  "required_headings": [
+    "Start here",
+    "What it is",
+    "Why it matters",
+    "How it works",
+    "A worked example",
+    "What can go wrong",
+    "Check yourself",
+    "Recap"
+  ],
+  "memory_guidance": [],
+  "previous_lesson": "## Start here\n\nImagine an open-book exam in college. Instead of answering only from memory, you open your notebook, find the right page, and write the answer. RAG works like this open-book test for computers. It helps computer programs answer your questions by reading helpful notes first.\n\n## What it is\n\nAI means artificial intelligence, which is software that does human tasks like reading or writing text [S1]. A language model is a type of AI software trained to write sentences [S1].\n\nRAG stands for Retrieval-Augmented Generation [S1]. \n- **Retrieval** means finding useful information.\n- **Augmented** means helped by extra information.\n- **Generation** means writing out an answer.\n\nSo, RAG is a method where an AI writer is helped by looking up facts before it speaks [S1, S2].\n\n## Why it matters\n\nA regular language model answers only from what the model learned in past training [S2]. It might guess when it does not know something fresh or specific. Looking up notes at answer time helps the system use new or special facts without changing what the model learned during its past training [S1, S2]. This improves factual quality and cuts down made-up facts [S1, S2].\n\n## How it works\n\nThe full process takes three simple steps:\n1. **You ask a question:** You type what you need to know.\n2. **The system finds notes:** The computer searches stored documents, web pages, or local files for matching pieces [S1]. An internet search is not always required [S1].\n3. **The system writes the answer:** The computer gives your question along with those found notes to the language model [S1]. The model uses those notes to write out a clear reply [S1, S2].\n\n## A worked example\n\nLet us look at a fictional college example.\n\nSuppose you ask: \"What is the last date to submit the physics assignment?\"\n\nWithout notes, the AI might guess: \"It is probably Friday.\" That guess could be wrong.\n\nNow, here is a fictional college notice: *\"Fictional Notice: Physics Assignment 2 must be submitted to Room 104 by 14th August at 4 PM.\"*\n\nThe RAG system finds this exact notice. It sends your question and this notice together to the language model. The model reads the notice and replies correctly: \"The last date to submit the physics assignment is 14th August by 4 PM.\"\n\n## What can go wrong\n\nRAG does not guarantee correct answers every time [S1, S2]. Mistakes can happen if the notes are wrong, old, or missing [S1]. If the notice has the wrong date, the answer can also be wrong [S1]. \n\nAlso, if you ask: \"What is the chemistry homework?\", the physics notice does not help. In that case, a good RAG system should simply say: \"The provided notes do not contain this answer,\" instead of guessing [S1].\n\n## Check yourself\n\nTry these three questions:\n\n1. What does the word \"augmented\" mean in RAG?\n2. Fictional library notice: *\"The library closes at 6 PM on Saturdays.\"* A student asks: \"When does the library close on Saturday?\" What will a RAG system do to answer?\n3. Fictional bus notice: *\"Bus 12 runs between the railway station and the market.\"* A passenger asks: \"What is the ticket price for Bus 12?\" What should a good RAG system reply?\n\n---\n\n**Answers:**\n1. \"Augmented\" means helped by extra information.\n2. The system retrieves the library notice, attaches it to the student's question, and uses it to answer: \"The library closes at 6 PM on Saturdays.\"\n3. It should state that the provided notes do not contain the answer, because ticket prices are not mentioned.\n\n## Recap\n\nRAG combines finding saved notes with text generation [S1, S2]. It helps an AI answer using real documents rather than guessing [S1]. Always remember: if source notes are missing or incorrect, errors can still happen [S1].\n\nRAG always gives correct answers, even when its source notes are wrong.\n",
+  "failures_to_fix": [
+    {
+      "id": "accuracy",
+      "passed": false,
+      "reason": "Line 64 directly claims that RAG always gives correct answers even when its source notes are wrong, contradicting the sources and the rubric constraint.",
+      "evidence_lines": [
+        64
+      ],
+      "source_ids": [
+        "S1",
+        "S2"
+      ],
+      "evidence": [
+        "RAG always gives correct answers, even when its source notes are wrong."
+      ]
+    },
+    {
+      "id": "flow",
+      "passed": false,
+      "reason": "Line 64 in the recap introduces a false claim that contradicts what was previously taught, and the recap appears after the practice section instead of before it.",
+      "evidence_lines": [
+        60,
+        62,
+        64
+      ],
+      "source_ids": [],
+      "evidence": [
+        "## Recap",
+        "RAG combines finding saved notes with text generation [S1, S2]. It helps an AI answer using real documents rather than guessing [S1]. Always remember: if source notes are missing or incorrect, errors can still happen [S1].",
+        "RAG always gives correct answers, even when its source notes are wrong."
+      ]
+    }
+  ]
+}

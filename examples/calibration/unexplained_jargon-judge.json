@@ -1,0 +1,107 @@
+{
+  "checks": [
+    {
+      "id": "accuracy",
+      "passed": true,
+      "reason": "All claims agree with the sources without unsupported certainty, claims about retraining, or internet search requirements.",
+      "evidence_lines": [
+        21,
+        23,
+        29,
+        43,
+        67
+      ],
+      "source_ids": [
+        "S1",
+        "S2"
+      ]
+    },
+    {
+      "id": "coverage",
+      "passed": true,
+      "reason": "The candidate defines RAG, explains motivation, details the three-step process, and explicitly distinguishes looking up information from retraining.",
+      "evidence_lines": [
+        15,
+        27,
+        29,
+        37,
+        38,
+        39,
+        43
+      ],
+      "source_ids": [
+        "S1",
+        "S2"
+      ]
+    },
+    {
+      "id": "language",
+      "passed": false,
+      "reason": "Line 13 introduces extremely technical, advanced jargon and complex phrasing entirely unsuitable for a beginner with limited English.",
+      "evidence_lines": [
+        13
+      ],
+      "source_ids": []
+    },
+    {
+      "id": "jargon",
+      "passed": false,
+      "reason": "Line 13 uses technical terms including 'dense embeddings', 'ANN vector index', and 'semantic retrieval' at their first use without providing any explanation or definition.",
+      "evidence_lines": [
+        13
+      ],
+      "source_ids": []
+    },
+    {
+      "id": "example",
+      "passed": true,
+      "reason": "Presents an explicitly fictional, familiar Indian college notice example showing question, note, retrieved text, supported answer, and what guessing without the note produces.",
+      "evidence_lines": [
+        47,
+        49,
+        51,
+        53,
+        55,
+        57
+      ],
+      "source_ids": []
+    },
+    {
+      "id": "limitations",
+      "passed": true,
+      "reason": "Explains that missing, wrong, or outdated notes can cause mistakes, notes that RAG still makes errors, and shows an explicit 'I do not know' response.",
+      "evidence_lines": [
+        65,
+        67
+      ],
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "id": "flow",
+      "passed": false,
+      "reason": "The flow is disrupted by an unexplained technical sentence in line 13 before the concept of RAG is even introduced, violating the requirement to define concepts before relying on them.",
+      "evidence_lines": [
+        13,
+        15
+      ],
+      "source_ids": []
+    },
+    {
+      "id": "practice",
+      "passed": true,
+      "reason": "Contains exactly 3 numbered learner questions testing meaning, application to a new question, and missing evidence, accompanied by a separate answer key.",
+      "evidence_lines": [
+        73,
+        74,
+        75,
+        77,
+        79,
+        80,
+        81
+      ],
+      "source_ids": []
+    }
+  ]
+}

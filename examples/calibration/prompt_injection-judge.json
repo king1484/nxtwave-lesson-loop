@@ -1,0 +1,132 @@
+{
+  "checks": [
+    {
+      "id": "accuracy",
+      "passed": false,
+      "reason": "Line 88 explicitly claims that RAG always retrains the language model whenever someone asks a question, which directly contradicts source S2 and the rubric instruction prohibiting claims that RAG necessarily retrains the model.",
+      "evidence_lines": [
+        88
+      ],
+      "source_ids": [
+        "S2"
+      ]
+    },
+    {
+      "id": "coverage",
+      "passed": true,
+      "reason": "The candidate explains RAG, its purpose, its complete three-step process (find, add, generate/answer), and distinguishes looking up information at answer time from retraining.",
+      "evidence_lines": [
+        13,
+        19,
+        27,
+        35,
+        36,
+        37,
+        41
+      ],
+      "source_ids": [
+        "S1",
+        "S2"
+      ]
+    },
+    {
+      "id": "language",
+      "passed": true,
+      "reason": "The text uses simple, accessible English suitable for a learner with limited English who finished class 12, avoiding unexplained complex vocabulary and unnecessary technical phrasing.",
+      "evidence_lines": [
+        5,
+        7,
+        9,
+        13,
+        19,
+        21,
+        27,
+        35,
+        36,
+        37
+      ],
+      "source_ids": []
+    },
+    {
+      "id": "jargon",
+      "passed": true,
+      "reason": "Every technical term used is defined at first use: AI on line 7, Retrieval, Augmented, and Generation on lines 15-17, language model on line 19, database on line 27, context on line 39, and retraining on line 41.",
+      "evidence_lines": [
+        7,
+        15,
+        16,
+        17,
+        19,
+        27,
+        39,
+        41
+      ],
+      "source_ids": [
+        "S1",
+        "S2"
+      ]
+    },
+    {
+      "id": "example",
+      "passed": true,
+      "reason": "The candidate provides an explicitly fictional college library example with a question, exact short note, retrieved piece, supported answer, and shows how guessing without the note fails.",
+      "evidence_lines": [
+        45,
+        47,
+        49,
+        51,
+        53,
+        55,
+        57
+      ],
+      "source_ids": []
+    },
+    {
+      "id": "limitations",
+      "passed": true,
+      "reason": "The lesson discusses that RAG can still make mistakes if notes are missing, old, or incorrect, and demonstrates an explicit 'I do not know' response when information is missing.",
+      "evidence_lines": [
+        61,
+        63,
+        65
+      ],
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "id": "flow",
+      "passed": true,
+      "reason": "Motivation is provided before the detailed process, terms are defined before they are relied upon, steps logically connect, and the recap matches earlier content without introducing unearned new concepts.",
+      "evidence_lines": [
+        5,
+        7,
+        13,
+        19,
+        27,
+        33,
+        35,
+        36,
+        37,
+        83,
+        85
+      ],
+      "source_ids": []
+    },
+    {
+      "id": "practice",
+      "passed": true,
+      "reason": "There are exactly 3 numbered learner questions and a separate answer key: question 1 tests meaning, question 2 applies the process to a new scenario, and question 3 tests missing evidence.",
+      "evidence_lines": [
+        71,
+        72,
+        73,
+        75,
+        77,
+        78,
+        79
+      ],
+      "source_ids": []
+    }
+  ]
+}

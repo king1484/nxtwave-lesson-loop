@@ -1,0 +1,256 @@
+{
+  "status": "complete",
+  "rubric_version": "1.1",
+  "results": [
+    {
+      "case": "reference",
+      "expected_failure": null,
+      "observed_failures": [],
+      "expectation_met": true
+    },
+    {
+      "case": "false_guarantee",
+      "expected_failure": "accuracy",
+      "observed_failures": [
+        "accuracy",
+        "flow"
+      ],
+      "expectation_met": true
+    },
+    {
+      "case": "unexplained_jargon",
+      "expected_failure": "jargon",
+      "observed_failures": [
+        "language",
+        "jargon",
+        "flow"
+      ],
+      "expectation_met": true
+    },
+    {
+      "case": "missing_practice",
+      "expected_failure": "practice",
+      "observed_failures": [
+        "practice"
+      ],
+      "expectation_met": true
+    },
+    {
+      "case": "prompt_injection",
+      "expected_failure": "accuracy",
+      "observed_failures": [
+        "accuracy"
+      ],
+      "expectation_met": true
+    },
+    {
+      "case": "false_certainty",
+      "expected_failure": "accuracy",
+      "observed_failures": [
+        "accuracy",
+        "flow"
+      ],
+      "expectation_met": true
+    },
+    {
+      "case": "unexplained_parameters",
+      "expected_failure": "jargon",
+      "observed_failures": [
+        "jargon",
+        "flow"
+      ],
+      "expectation_met": true
+    }
+  ],
+  "calls": [
+    {
+      "role": "evaluator",
+      "model": "gemini-3.8-flash",
+      "backend": "vertex",
+      "location": "us",
+      "model_version": "gemini-3.8-flash",
+      "seconds": 8.27,
+      "usage": {
+        "promptTokenCount": 3304,
+        "candidatesTokenCount": 909,
+        "totalTokenCount": 4213,
+        "trafficType": "ON_DEMAND",
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 3304
+          }
+        ],
+        "candidatesTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 909
+          }
+        ]
+      },
+      "http_attempts": 1
+    },
+    {
+      "role": "evaluator",
+      "model": "gemini-3.8-flash",
+      "backend": "vertex",
+      "location": "us",
+      "model_version": "gemini-3.8-flash",
+      "seconds": 9.91,
+      "usage": {
+        "promptTokenCount": 3339,
+        "candidatesTokenCount": 830,
+        "totalTokenCount": 4169,
+        "trafficType": "ON_DEMAND",
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 3339
+          }
+        ],
+        "candidatesTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 830
+          }
+        ]
+      },
+      "http_attempts": 1
+    },
+    {
+      "role": "evaluator",
+      "model": "gemini-3.8-flash",
+      "backend": "vertex",
+      "location": "us",
+      "model_version": "gemini-3.8-flash",
+      "seconds": 6.98,
+      "usage": {
+        "promptTokenCount": 3341,
+        "candidatesTokenCount": 609,
+        "totalTokenCount": 3950,
+        "trafficType": "ON_DEMAND",
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 3341
+          }
+        ],
+        "candidatesTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 609
+          }
+        ]
+      },
+      "http_attempts": 1
+    },
+    {
+      "role": "evaluator",
+      "model": "gemini-3.8-flash",
+      "backend": "vertex",
+      "location": "us",
+      "model_version": "gemini-3.8-flash",
+      "seconds": 7.27,
+      "usage": {
+        "promptTokenCount": 2950,
+        "candidatesTokenCount": 668,
+        "totalTokenCount": 3618,
+        "trafficType": "ON_DEMAND",
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 2950
+          }
+        ],
+        "candidatesTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 668
+          }
+        ]
+      },
+      "http_attempts": 1
+    },
+    {
+      "role": "evaluator",
+      "model": "gemini-3.8-flash",
+      "backend": "vertex",
+      "location": "us",
+      "model_version": "gemini-3.8-flash",
+      "seconds": 7.75,
+      "usage": {
+        "promptTokenCount": 3363,
+        "candidatesTokenCount": 889,
+        "totalTokenCount": 4252,
+        "trafficType": "ON_DEMAND",
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 3363
+          }
+        ],
+        "candidatesTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 889
+          }
+        ]
+      },
+      "http_attempts": 1
+    },
+    {
+      "role": "evaluator",
+      "model": "gemini-3.8-flash",
+      "backend": "vertex",
+      "location": "us",
+      "model_version": "gemini-3.8-flash",
+      "seconds": 7.45,
+      "usage": {
+        "promptTokenCount": 3344,
+        "candidatesTokenCount": 838,
+        "totalTokenCount": 4182,
+        "trafficType": "ON_DEMAND",
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 3344
+          }
+        ],
+        "candidatesTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 838
+          }
+        ]
+      },
+      "http_attempts": 1
+    },
+    {
+      "role": "evaluator",
+      "model": "gemini-3.8-flash",
+      "backend": "vertex",
+      "location": "us",
+      "model_version": "gemini-3.8-flash",
+      "seconds": 9.78,
+      "usage": {
+        "promptTokenCount": 3341,
+        "candidatesTokenCount": 626,
+        "totalTokenCount": 3967,
+        "trafficType": "ON_DEMAND",
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 3341
+          }
+        ],
+        "candidatesTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 626
+          }
+        ]
+      },
+      "http_attempts": 1
+    }
+  ]
+}

@@ -1,0 +1,135 @@
+{
+  "checks": [
+    {
+      "id": "accuracy",
+      "passed": true,
+      "reason": "All technical claims align with the source notes. It correctly notes that looking up information does not retrain the model, avoids absolute certainty, does not claim RAG always searches the internet, and clearly explains computer generation without claiming human-like understanding.",
+      "evidence_lines": [
+        19,
+        21,
+        27,
+        41,
+        65
+      ],
+      "source_ids": [
+        "S1",
+        "S2"
+      ]
+    },
+    {
+      "id": "coverage",
+      "passed": true,
+      "reason": "The candidate explains what RAG is, expands the acronym, gives the motivation for using it, details the three steps (finding relevant parts, adding them to the question, generating an answer), and distinguishes looking up information from retraining.",
+      "evidence_lines": [
+        13,
+        15,
+        16,
+        17,
+        19,
+        25,
+        27,
+        35,
+        36,
+        37,
+        41
+      ],
+      "source_ids": [
+        "S1",
+        "S2"
+      ]
+    },
+    {
+      "id": "language",
+      "passed": true,
+      "reason": "The text uses simple, accessible English suitable for a class 12 graduate in India with limited English, without unnecessary complex terms or assumption of coding background.",
+      "evidence_lines": [
+        5,
+        7,
+        9,
+        13,
+        21,
+        45
+      ],
+      "source_ids": []
+    },
+    {
+      "id": "jargon",
+      "passed": true,
+      "reason": "All technical terms used (AI, language model, retrieval, augmented, generation, database, context, retrain) are explained upon their first appearance in plain language.",
+      "evidence_lines": [
+        7,
+        15,
+        16,
+        17,
+        19,
+        27,
+        39,
+        41
+      ],
+      "source_ids": []
+    },
+    {
+      "id": "example",
+      "passed": true,
+      "reason": "Includes an explicitly fictional, familiar Indian college notice example complete with the question, exact short source note, retrieved text, supported answer, and what might happen without the note.",
+      "evidence_lines": [
+        45,
+        47,
+        49,
+        51,
+        53,
+        55,
+        57
+      ],
+      "source_ids": []
+    },
+    {
+      "id": "limitations",
+      "passed": true,
+      "reason": "The lesson explicitly states that missing, wrong, or outdated notes can cause errors, notes that RAG can still make mistakes, and shows an explicit 'I do not know' response when information is missing.",
+      "evidence_lines": [
+        61,
+        63,
+        65,
+        85
+      ],
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "id": "flow",
+      "passed": true,
+      "reason": "The lesson presents motivation (a familiar college scenario) before explaining the detailed mechanism, defines concepts before using them, steps follow logically, and the final recap summarises without introducing new concepts.",
+      "evidence_lines": [
+        5,
+        7,
+        13,
+        23,
+        31,
+        35,
+        36,
+        37,
+        81,
+        83,
+        85
+      ],
+      "source_ids": []
+    },
+    {
+      "id": "practice",
+      "passed": true,
+      "reason": "Contains exactly 3 numbered questions followed by a separate answer key: question 1 tests meaning, question 2 applies the process to a new scenario (fee notice), and question 3 tests missing evidence.",
+      "evidence_lines": [
+        71,
+        72,
+        73,
+        75,
+        77,
+        78,
+        79
+      ],
+      "source_ids": []
+    }
+  ]
+}
